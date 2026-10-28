@@ -14,7 +14,7 @@ Fill in each section below, then commit and push this `README.md` to your GitHub
 Your TaskFlow API deployed on Railway:
 
 ```
-https://your-app-name.up.railway.app/api/tasks
+https://taskflow-api-production-7245.up.railway.app/api/tasks
 ```
 
 ### Screenshot: Railway dashboard
@@ -27,7 +27,7 @@ Your Railway dashboard showing the active deployment. Save the image in the `scr
 
 Your live Railway URL returning task data (in your browser or terminal).
 
-![Live application](screenshots/application.png)
+![Live application](screenshots/applicationScreen.png)
 
 ### Errors and failures
 
@@ -89,11 +89,10 @@ Create a task:
 curl -X POST http://localhost:8080/api/tasks \
   -H "Content-Type: application/json" \
   -d '{
-    "title": "Complete Module 3",
-    "description": "Finish assignment",
-    "priority": "HIGH",
-    "dueDate": "2026-05-20",
-    "completed": false
+        "id": 4,
+        "title": "Task 4",
+        "description": "Do the Assignment 1 and 4",
+        "completed": true
   }'
 ```
 
@@ -109,12 +108,3 @@ Get a task by ID:
 curl http://localhost:8080/api/tasks/1
 ```
 
-### H2 Database Console
-
-While the app is running, the H2 console is available at `http://localhost:8080/h2-console`.
-
-Use the following connection settings:
-
-- JDBC URL: `jdbc:h2:mem:taskflowdb`
-- Username: `sa`
-- Password: *(leave blank)*
